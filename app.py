@@ -23,6 +23,7 @@ from singhacks26.alignment import (
     vault_note_hash,
 )
 from singhacks26.evidence import mermaid_graph, resolve_sources, sources_frame
+from singhacks26.graph_ui import render_knowledge_graph
 from singhacks26.intelligence import (
     AS_OF,
     attention_queue,
@@ -1613,6 +1614,7 @@ with st.sidebar:
             "Command Center",
             "Focus casebook",
             "Client deep dive",
+            "Knowledge graph",
             "Notes library",
             "Upstream context",
             "Action record",
@@ -1655,7 +1657,10 @@ with header_right:
         if st.button("✦ Notes", width="stretch"):
             notes_bubble(default_client)
 
-if page == "Home":
+if page == "Knowledge graph":
+    render_knowledge_graph(data)
+
+elif page == "Home":
     st.markdown(
         '<div class="hero">Home</div>',
         unsafe_allow_html=True,

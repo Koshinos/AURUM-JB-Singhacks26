@@ -74,6 +74,9 @@ uv run streamlit run app.py
 
 Then open the URL Streamlit prints.
 
+For the optional Neo4j ontology and client graph explorer, follow
+[Knowledge graph setup](docs/KNOWLEDGE_GRAPH.md).
+
 > The app runs without API keys. Live news and AI drafting simply stay disabled.
 
 ### 3. Run the tests

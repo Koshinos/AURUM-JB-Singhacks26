@@ -50,6 +50,17 @@ severity, observed facts, evidence references, assumptions, uncertainty and calc
 Aurum may prioritise and annotate the signal but must not silently alter its calculation or
 provenance.
 
+## Neo4j projection (ontology v1)
+
+`ontology.py` defines the typed property-graph contract. `knowledge_graph.py`
+projects authoritative CSVs, RM observations and the existing curated theme map
+into versioned Neo4j entities with source provenance. `graph_ui.py` exposes an
+optional client explorer. This is a read-side projection, not a new financial
+risk engine or replacement for workflow persistence. Imports are explicit and
+atomic; source changes require reimport. No LLM-generated relationships are
+accepted. See [KNOWLEDGE_GRAPH.md](KNOWLEDGE_GRAPH.md) for schema, setup, semantics
+and validation. This introduces the official `neo4j` driver dependency.
+
 ## Deliberate prototype limits
 
 - Local JSON demonstrates workflow storage; it is not bank-grade immutable retention.
